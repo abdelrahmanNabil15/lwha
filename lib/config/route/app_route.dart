@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lwha/config/route/routes.dart';
 
+import '../../main.dart';
+
 
 /// Manages and organizes the routes in the application.
 class AppRoutes {
@@ -10,7 +12,7 @@ class AppRoutes {
     switch (route.name) {
       case Routes.MainScreen:
         // If the route is MainScreen, create the route using the _createRoute function.
-        return _createRoute(child: MainScreen());
+        return _createRoute(child: const MyApp());
       default:
         // If the requested route is not defined, return a route that shows a "not found" screen.
         return notFoundRoute();
