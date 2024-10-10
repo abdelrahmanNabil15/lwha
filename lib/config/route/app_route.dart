@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lwha/config/route/routes.dart';
+import 'package:lwha/main.dart';
 
 
 /// Manages and organizes the routes in the application.
@@ -10,13 +11,12 @@ class AppRoutes {
     switch (route.name) {
       case Routes.MainScreen:
         // If the route is MainScreen, create the route using the _createRoute function.
-        return _createRoute(child: MainScreen());
+        return _createRoute(child: HomePage());
       default:
         // If the requested route is not defined, return a route that shows a "not found" screen.
         return notFoundRoute();
     }
   }
-
   /// A private function that creates a route using a slide transition.
   static Route _createRoute({required Widget child}) {
     return PageRouteBuilder(
@@ -63,65 +63,4 @@ class AppRoutes {
 }
 
 
-//         Flutter Routing Example        //
 
-// import 'package:flutter/material.dart';
-
-// void main() {
-//   runApp(MyApp());
-// }
-
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Flutter Routing Example',
-//       // Setting the initial route to the home screen
-//       initialRoute: Routes.intiRoutes,
-//       // Defining routes with onGenerateRoute
-//       onGenerateRoute: AppRoutes.onGenerateRoute,
-//       home: HomeScreen(),
-//     );
-//   }
-// }
-
-////// Home screen that acts as the entry point of the app. //////
-
-// class HomeScreen extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Home Screen'),
-//       ),
-//       body: Center(
-//         child: ElevatedButton(
-//           onPressed: () {
-//             // Navigating to the MainScreen route when the button is pressed
-//             Navigator.of(context).pushNamed(Routes.MainScreen);
-//           },
-//           child: Text('Go to Main Screen'),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-////// A placeholder screen that is navigated to.  //////
-
-// class MainScreen extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Main Screen'),
-//       ),
-//       body: Center(
-//         child: Text(
-//           'Welcome to the Main Screen!',
-//           style: TextStyle(fontSize: 24),
-//         ),
-//       ),
-//     );
-//   }
-// }
